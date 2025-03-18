@@ -1,0 +1,8 @@
+python==3.6.13
+Keras==2.1.0
+tensorflow==1.4.0
+tensorflow-tensorboard==0.4.0
+opencv-python==3.4.2.16
+h5py==2.10.0
+numpy==1.19.5
+scipy==1.5.4
