@@ -7,7 +7,7 @@ def readimage(global_num:int,set:str)-> List[np.ndarray]:
         images=[]
         for i in range(1,global_num):
                 if set=='set1':
-                       filename = f"Image{i}.tif"
+                       filename = f"images/Image{i}.tif"
                 else: 
                        filename = f"myimage/myImage{i}.jpg"  
                 img = cv2.imread(filename, flags=cv2.IMREAD_COLOR)
@@ -31,7 +31,7 @@ def FindandDraw_Corners(images:List[np.ndarray],global_num:int,size:tuple,square
         for i in range(1,global_num):
                 img=images[i-1]
                 if set=='set1':
-                       filename = f"Image{i}.tif" 
+                       filename = f"images/Image{i}.tif" 
                 else:
                        filename = f"myimage/myImage{i}.jpg"
                 ret,corners=cv2.findChessboardCorners(img,size)
@@ -72,7 +72,7 @@ def task(global_num:int,size:tuple,square_size:int,set:str):
 
 def de_distortion(mtx,dist):
         print("选取image7")
-        cur_img=cv2.imread("Image7.tif", flags=cv2.IMREAD_COLOR)
+        cur_img=cv2.imread("images/Image7.tif", flags=cv2.IMREAD_COLOR)
         dst = cv2.undistort(cur_img, mtx, dist, dst=None, newCameraMatrix=None)
         if dst is None:
                 print("Error: Undistortion failed.")
